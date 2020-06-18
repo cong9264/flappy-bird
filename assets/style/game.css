@@ -1,0 +1,140 @@
+#game {
+  width: 100%;
+  height: 600px;
+  background-image: url("../../img/sky.png");
+  position: relative;
+}
+
+/* game start */
+.game-start > .bird {
+  width: 30px;
+  height: 30px;
+  background-image: url("../../img/birds.png");
+  text-indent: -9999px;
+  position: absolute;
+  top: 235px;
+  left: 50%;
+  transform: translateX(-15px);
+}
+
+.game-start > .start {
+  width: 300px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  font-weight: bold;
+  position: absolute;
+  top: 295px;
+  left: 50%;
+  margin-left: -150px;
+}
+
+.game-start > .start.start-white {
+  color: #fff;
+  font-size: 24px;
+}
+
+.game-start > .start.start-blue {
+  color: #09f;
+  font-size: 36px;
+}
+/* end -- game start */
+
+/* in the game*/
+.in-game > .score {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+/* end -- in the game*/
+
+/* game over */
+.game-over > .mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.game-over > .end {
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  line-height: 30px;
+}
+
+.game-over > .end .over {
+  color: #f00;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.game-over > .end .result,
+.game-over > .end .final-score {
+  color: #ff0;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.game-over > .end .rank-list {
+  color: #09f;
+  margin-top: 20px;
+  text-align: left;
+}
+
+.game-over > .end .rank-item {
+  height: 30px;
+  line-height: 30px;
+  font-size: 13px;
+  margin-bottom: 10px;
+  padding: 0 10px;
+}
+
+.game-over > .end .rank-no {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  line-height: 14px;
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
+  background-color: #82c9f5;
+  margin-right: 10px;
+}
+
+.game-over > .end .rank-no.first {
+  background-color: #e93e3e;
+}
+
+.game-over > .end .rank-no.second {
+  background-color: #ff7e3d;
+}
+
+.game-over > .end .rank-no.third {
+  background-color: #f1a232;
+}
+
+.game-over > .end .rank-time {
+  text-align: right;
+}
+
+.game-over > .end .rank-score {
+  display: inline-block;
+  width: 30px;
+}
+
+.game-over > .end .restart {
+  color: #09f;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+/* end -- game over */
