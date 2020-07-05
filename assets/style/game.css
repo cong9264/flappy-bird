@@ -3,8 +3,20 @@
   height: 600px;
   background-image: url("../../img/sky.png");
   position: relative;
+  /* animation-name: skyMove; 
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite; */
 }
 
+/* @keyframes skyMove {
+  0% {
+    background-position-x: 0px;
+  }
+  100% {
+    background-position-x: 800px;
+  }
+} */
 /* game start */
 .game-start > .bird {
   width: 30px;
@@ -15,6 +27,7 @@
   top: 235px;
   left: 50%;
   transform: translateX(-15px);
+  transition: top .3s linear;
 }
 
 .game-start > .start {
@@ -26,7 +39,9 @@
   position: absolute;
   top: 295px;
   left: 50%;
+  cursor: pointer;
   margin-left: -150px;
+  transition: font-size .3s linear;
 }
 
 .game-start > .start.start-white {
@@ -42,6 +57,7 @@
 
 /* in the game*/
 .in-game > .score {
+  display: none;
   color: #fff;
   font-size: 24px;
   font-weight: bold;
@@ -53,6 +69,7 @@
 
 /* game over */
 .game-over > .mask {
+  display: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -62,6 +79,7 @@
 }
 
 .game-over > .end {
+  display: none;
   position: absolute;
   top: 70px;
   left: 50%;
