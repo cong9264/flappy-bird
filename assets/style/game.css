@@ -3,6 +3,7 @@
   height: 600px;
   background-image: url("../../img/sky.png");
   position: relative;
+  overflow: hidden;
   /* animation-name: skyMove; 
   animation-duration: 3s;
   animation-timing-function: linear;
@@ -27,7 +28,7 @@
   top: 235px;
   left: 50%;
   transform: translateX(-15px);
-  transition: top .3s linear;
+  transition: top 0.3s linear;
 }
 
 .game-start > .start {
@@ -41,7 +42,8 @@
   left: 50%;
   cursor: pointer;
   margin-left: -150px;
-  transition: font-size .3s linear;
+  transition: font-size 0.3s linear;
+  user-select:none;
 }
 
 .game-start > .start.start-white {
@@ -64,6 +66,25 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 10;
+  user-select:none;
+}
+
+.in-game > .pipe {
+  width: 52px;
+  height: 150px;
+  position: absolute;
+}
+
+.in-game > .pipe.pipe-up {
+  top: 0;
+  background-image: url("../../img/pipe2.png");
+  background-position-y: bottom;
+}
+
+.in-game > .pipe.pipe-down {
+  bottom: 0;
+  background-image: url("../../img/pipe1.png");
 }
 /* end -- in the game*/
 
@@ -86,6 +107,7 @@
   transform: translateX(-50%);
   text-align: center;
   line-height: 30px;
+  user-select:none;
 }
 
 .game-over > .end .over {
