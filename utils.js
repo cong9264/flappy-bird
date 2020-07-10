@@ -1,3 +1,9 @@
+/**
+ * 根据传入元素，类名以及内联样式创建元素
+ * @param {String} elName 
+ * @param {Array} classArr 
+ * @param {Object} styleObj 
+ */
 function createEl(elName, classArr, styleObj) {
   var dom = document.createElement(elName);
   if (Array.isArray(classArr)) {
@@ -13,6 +19,11 @@ function createEl(elName, classArr, styleObj) {
   return dom;
 }
 
+/**
+ * 本地存储分数数据
+ * @param {String} key 
+ * @param {Array} value 
+ */
 function setLocal(key, value) {
   if (typeof (value) === 'object' && value !== null) {
     value = JSON.stringify(value);
@@ -20,6 +31,10 @@ function setLocal(key, value) {
   localStorage.setItem(key, value);
 }
 
+/**
+ * 获取本地存储数据
+ * @param {String} key 
+ */
 function getLocal(key) {
   var value = localStorage.getItem(key);
   if (!value) {
@@ -31,6 +46,9 @@ function getLocal(key) {
   return value;
 }
 
+/**
+ * 获取当前时间
+ */
 function getDate() {
   var time = new Date(),
     year = formatNum(time.getFullYear()),
@@ -42,6 +60,10 @@ function getDate() {
   return `${year}.${month}.${day} ${hour}:${minute}:${second}`;
 }
 
+/**
+ * 格式化数字
+ * @param {Number} num 
+ */
 function formatNum(num) {
   return num < 10 ? '0' + num : num;
 }

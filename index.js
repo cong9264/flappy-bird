@@ -6,9 +6,7 @@ var bird = {
     this.initData();
     this.animate();
     this.handle();
-    if (sessionStorage.getItem('play')) {
-      this.gameStart();
-    }
+    sessionStorage.getItem('play') && this.gameStart();
   },
 
   /**
@@ -204,14 +202,13 @@ var bird = {
    */
   handleRestart() {
     this.oRestart.onclick = () => {
-      console.log(1111);
       sessionStorage.setItem('play', true);
       window.location.reload();
     };
   },
 
   /**
-   * 
+   * game start
    */
   gameStart() {
     this.startFlag = true;
@@ -238,7 +235,8 @@ var bird = {
   },
 
   /**
-   * 创建柱子
+   * 创建柱子,传入的值为left值
+   * @param {Number} x 
    */
   createPipe(x) {
     var pipeHeight = this.getPipeHeight();
@@ -255,6 +253,9 @@ var bird = {
     });
   },
 
+  /**
+   * 获取上下柱子的高度
+   */
   getPipeHeight() {
     var upHeight = Math.floor(Math.random() * 175) + 50,
       downHeight = 600 - 150 - upHeight;
@@ -300,10 +301,11 @@ var bird = {
    */
   renderRankList() {
     var template = '';
-    for (var i = 0; i < 8; i++) {
+    var scoreArrLen = this.scoreArr.length < 8 ? scoreArrLen = this.scoreArr.length : 8;
+    for (var i = 0; i < scoreArrLen; i++) {
       template += `
       <li class="rank-item">
-        <span class="rank-no ${this.degreeClass(i)} ">${i + 1}</span>
+        <span class="rank-no ${this.degreeClass(i)}">${i + 1}</span>
         <span class="rank-score">${this.scoreArr[i].score}</span>
         <span class="rank-time">${this.scoreArr[i].time}</span>
       </li>`;
